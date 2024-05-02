@@ -69,11 +69,11 @@
           let _ = processInfo.physicalMemory
         }
       }
-      func testFailingTestProcessInfo_systemUptime() {
-        XCTExpectFailure {
-          let _ = processInfo.systemUptime
-        }
-      }
+//      func testFailingTestProcessInfo_systemUptime() {
+//        XCTExpectFailure {
+//          let _ = processInfo.systemUptime
+//        }
+//      }
       func testFailingTestProcessInfo_thermalState() {
         XCTExpectFailure {
           let _ = processInfo.thermalState

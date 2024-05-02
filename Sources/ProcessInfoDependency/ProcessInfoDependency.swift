@@ -33,7 +33,7 @@
         @ReadOnlyProxy public var processorCount: Int
         @ReadOnlyProxy public var activeProcessorCount: Int
         @ReadOnlyProxy public var physicalMemory: UInt64
-        @ReadOnlyProxy public var systemUptime: TimeInterval
+//        @ReadOnlyProxy public var systemUptime: TimeInterval
         @ReadOnlyProxy public var thermalState: ProcessInfo.ThermalState
         @ReadOnlyProxy public var isLowPowerModeEnabled: Bool
         @ReadOnlyProxy public var isMacCatalystApp: Bool
@@ -119,9 +119,9 @@
     }
 
     /// The amount of time the system has been awake since the last time it was restarted.
-    public var systemUptime: TimeInterval {
-      self._implementation.systemUptime
-    }
+//    public var systemUptime: TimeInterval {
+//      self._implementation.systemUptime
+//    }
 
     /// The current thermal state of the system.
     public var thermalState: ProcessInfo.ThermalState {
@@ -247,7 +247,7 @@
           processorCount: .init(ProcessInfo.processInfo.processorCount),
           activeProcessorCount: .init(ProcessInfo.processInfo.activeProcessorCount),
           physicalMemory: .init(ProcessInfo.processInfo.physicalMemory),
-          systemUptime: .init(ProcessInfo.processInfo.systemUptime),
+//          systemUptime: .init(ProcessInfo.processInfo.systemUptime),
           thermalState: .init(ProcessInfo.processInfo.thermalState),
           isLowPowerModeEnabled: .init {
             if #available(macOS 12.0, iOS 9.0, tvOS 9.0, watchOS 2.0, *) {
@@ -360,8 +360,8 @@
             #"@Dependency(\.processInfo.activeProcessorCount)"#),
           physicalMemory: .unimplemented(
             #"@Dependency(\.processInfo.physicalMemory)"#),
-          systemUptime: .unimplemented(
-            #"@Dependency(\.processInfo.systemUptime)"#),
+//          systemUptime: .unimplemented(
+//            #"@Dependency(\.processInfo.systemUptime)"#),
           thermalState: .unimplemented(
             #"@Dependency(\.processInfo.thermalState)"#,
             placeholder: .critical),
